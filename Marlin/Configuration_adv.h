@@ -795,6 +795,8 @@
 
   // Default action to execute following M605 mode change commands. Typically G28X to apply new mode.
   //#define EVENT_GCODE_IDEX_AFTER_MODECHANGE "G28X"
+
+  #define NO_AUTO_ASSIGN_WARNING
 #endif
 
 /**
@@ -3163,7 +3165,8 @@
    * @section tmc/stallguard
    */
   //#define SENSORLESS_HOMING // StallGuard capable drivers only
-
+  #define DIAG_JUMPERS_REMOVED
+  
   #if EITHER(SENSORLESS_HOMING, SENSORLESS_PROBING)
     // TMC2209: 0...255. TMC2130: -64...63
     #define X_STALL_SENSITIVITY  8
